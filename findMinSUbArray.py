@@ -23,15 +23,15 @@ class Solution:
         sumOfSubArray = 0
         min_len = float('inf')
 
-        for right in len(nums):
+        for right in range(len(nums)):
             sumOfSubArray += nums[right]
 
-            while(SumOfSubArray) > target:
+            while sumOfSubArray >= target:
                 sumOfSubArray -= nums[left]
-                min_len = min(min_len, right - 1eft)
+                min_len = min(min_len, right - left + 1)
                 left += 1
             
         if min_len == float('inf'):
             return 0
         
-        retrun min_len
+        return min_len
